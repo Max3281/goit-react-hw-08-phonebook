@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[199],{635:function(e,t,a){a.r(t);var r=a(184);t.default=function(){return(0,r.jsxs)("div",{children:["Your home page. Please, login or register to have an access to contacts page."," "]})}}}]);
+//# sourceMappingURL=199.5c274858.chunk.js.map

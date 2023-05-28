@@ -1,13 +1,10 @@
-const { NavLink } = require('react-router-dom');
-
 const ErrorPage = () => {
   return (
     <section>
-      <p>
+      <p className="error-page-text">
         Unfortunately there is no such page. Please proceed to the Home page if
         you want to continue
       </p>
-      <NavLink to="/">Home</NavLink>
     </section>
   );
 };

@@ -55,9 +55,12 @@ function ContactsForm() {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
+    <form className="contact-form" autoComplete="off" onSubmit={handleSubmit}>
+      <label className="contact-form_label" htmlFor="name">
+        Name
+      </label>
       <input
+        className="contact-form_input"
         type="text"
         name="name"
         placeholder="Full name"
@@ -67,8 +70,11 @@ function ContactsForm() {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-      <label htmlFor="number">Tel.Number</label>
+      <label className="contact-form_label" htmlFor="number">
+        Tel.Number
+      </label>
       <input
+        className="contact-form_input"
         type="tel"
         name="number"
         placeholder="Tel. number"
@@ -79,7 +85,9 @@ function ContactsForm() {
         required
       />
 
-      <button type="submit">Add contact</button>
+      <button className="contact-form_button-submit" type="submit">
+        Add contact
+      </button>
     </form>
   );
 }

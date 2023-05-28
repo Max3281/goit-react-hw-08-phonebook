@@ -1,5 +1,5 @@
-import { AuthNavigation } from 'components/AuthNavigation/AuthNavigation';
-import { UserMenu } from 'components/UserMenu/UserMenu';
+import { AuthNavigation } from 'components/Navigation/AuthNavigation';
+import { UserMenu } from 'components/Navigation/UserMenu';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/authOperations/selectors';
@@ -7,13 +7,21 @@ import { selectIsLoggedIn } from 'redux/authOperations/selectors';
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  console.log(isLoggedIn);
-
   return (
-    <header>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="contacts">Contacts</NavLink>
-      {!isLoggedIn ? <AuthNavigation /> : <UserMenu />}
+    <header className="app-header">
+      <NavLink to="/" className="app-headerNav">
+        Home
+      </NavLink>
+      {isLoggedIn && (
+        <NavLink to="contacts" className="app-headerNav">
+          Contacts
+        </NavLink>
+      )}
+      {!isLoggedIn ? (
+        <AuthNavigation className="app-headerNav" />
+      ) : (
+        <UserMenu className="app-headerNav" />
+      )}
     </header>
   );
 };

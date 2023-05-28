@@ -1,26 +1,26 @@
 import React, { useEffect, lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Layout from 'components/Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentUser } from 'redux/authOperations/operations';
-// import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
-import { selectIsLoggedIn } from 'redux/authOperations/selectors';
+import {
+  selectIsLoggedIn,
+  selectIsRefreshing,
+} from 'redux/authOperations/selectors';
 
-const HomePage = lazy(() => import('../../pages/Homepage/Homepage'));
-const ContactsPage = lazy(() =>
-  import('../../pages/ContactsPage/ContactsPage')
-);
-const RegisterPage = lazy(() =>
-  import('../../pages/RegisterPage/RegisterPage')
-);
-const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
+import PrivateRoute from 'components/Routes/PrivateRoute';
+import RestrictedRoute from 'components/Routes/RestrictedRoute';
+import Layout from 'components/Layout/Layout';
+
+const HomePage = lazy(() => import('../../pages/Homepage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
+const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
+const LoginPage = lazy(() => import('../../pages/LoginPage'));
+const ErrorPage = lazy(() => import('pages/ErrorPage'));
 
 function App() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
-  // let restrict = false;
-  console.log(isLoggedIn);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(getCurrentUser());
@@ -28,32 +28,35 @@ function App() {
 
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {/* <PrivateRoute path="contacts">
-            <ContactsPage />
-          </PrivateRoute> */}
-          <Route index element={<HomePage />} />
-          <Route
-            path="register"
-            element={
-              !isLoggedIn ? <RegisterPage /> : <Navigate replace to="/" />
-            }
-          />
-          <Route
-            path="login"
-            element={!isLoggedIn ? <LoginPage /> : <Navigate replace to="/" />}
-          />
+      {isRefreshing ? (
+        <p>...Loading. Please, wait.</p>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="register"
+              element={
+                !isLoggedIn ? <RegisterPage /> : <Navigate replace to="/" />
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+              }
+            />
 
-          <Route
-            path="contacts"
-            element={
-              isLoggedIn ? <ContactsPage /> : <Navigate replace to="/" />
-            }
-          />
-          <Route path="*" />
-        </Route>
-      </Routes>
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute redirectTo="/" component={<ContactsPage />} />
+              }
+            />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
+        </Routes>
+      )}
     </div>
   );
 }

@@ -1,5 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
-@import './components/ContactsList/ContactList.css';
+@import './components/Contacts/Contacts.css';
+@import './pages/allPages.css';
+@import './components/Layout/Layout.css';
+@import './components/Navigation/Navigation.css';
 
 body {
   margin: 0;

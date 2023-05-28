@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import ContactsForm from '../../components/ContactsForm/ContactsForm';
-import Filter from '../../components/Filter/Filter';
-import ContactsList from 'components/ContactsList/ContactsList';
+import ContactsForm from '../components/Contacts/ContactsForm';
+import Filter from '../components/Contacts/Filter';
+import ContactsList from 'components/Contacts/ContactsList';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contactOperations/operations';
 
@@ -13,14 +13,14 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <h1>Phonebook</h1>
+    <section className="contact-container">
+      <h1 className="contact-header">Phonebook</h1>
       <ContactsForm />
 
-      <h2>Contacts</h2>
+      <h2 className="contact-header">Contacts</h2>
       <Filter />
       <ContactsList />
-    </>
+    </section>
   );
 };
 

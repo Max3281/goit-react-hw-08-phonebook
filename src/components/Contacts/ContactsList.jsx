@@ -25,17 +25,17 @@ const ContactsList = () => {
   return (
     <div>
       {filterContacts.length === 0 || (
-        <ul>
+        <ul className="contact-list-block">
           {filterContacts.map(({ id, name, number }) => {
             return (
               <li key={id} className="contact-unit">
-                <p>
+                <p className="contact-list-text">
                   {name}: {number}
                 </p>
                 <button
                   type="button"
                   onClick={() => delContact(id)}
-                  className="delete-contact"
+                  className="delete-contact-button"
                 >
                   Удалить контакт
                 </button>

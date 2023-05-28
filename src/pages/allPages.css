@@ -1,0 +1,94 @@
+/* HOME PAGE */
+
+.home-page-container {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.home-page-text {
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+
+  color: inherit;
+
+  font-size: 25px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+/* CONTACT PAGE */
+.contact-container {
+  margin: 0;
+  padding: 0px 30px;
+}
+
+.contact-header {
+  color: inherit;
+
+  font-size: 30px;
+  font-weight: 500;
+  font-family: inherit;
+
+  margin: 0;
+  padding: 50px 0px;
+}
+
+/* REGISTER PAGE */
+.register-page-container {
+  margin: 0;
+  padding: 50px 00px;
+}
+
+.register-page-form {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.register-page-label {
+  color: inherit;
+
+  font-size: 30px;
+  font-weight: 500;
+  font-family: inherit;
+
+  margin: 0;
+  margin-left: 30px;
+  padding: 50px 0px;
+}
+
+.register-page-input {
+  padding: 10px 10px;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  color: inherit;
+  border: 1px solid aliceblue;
+  border-radius: 10px 0px 10px 0px;
+}
+
+.register-button {
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+
+  border: 1px solid aliceblue;
+  border-radius: 0px 15px 0px 15px;
+  background-color: inherit;
+  color: inherit;
+
+  padding: 15px 15px;
+  margin-left: 30px;
+}
+
+.register-button:hover {
+  border: 1px solid gold;
+  color: gold;
+}

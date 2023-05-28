@@ -21,7 +21,6 @@ export const conSlice = createSlice({
         state.items.push(payload);
       })
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.items = state.items.filter(ret => ret.id !== payload.id);
       })
       .addMatcher(isAnyOf(...getAction('pending')), state => {

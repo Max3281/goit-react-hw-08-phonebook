@@ -12,9 +12,14 @@ const Filter = () => {
   };
 
   return (
-    <label>
+    <label className="filter-header">
       Find contacts by name{' '}
-      <input type="text" value={val} onChange={changeFilter} />
+      <input
+        className="filter-input"
+        type="text"
+        value={val}
+        onChange={changeFilter}
+      />
     </label>
   );
 };

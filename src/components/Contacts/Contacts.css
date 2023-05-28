@@ -1,0 +1,121 @@
+/* CONTACTS FORM */
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-left: 30px;
+}
+
+.contact-form_label {
+  color: inherit;
+
+  font-size: 25px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.contact-form_input {
+  padding: 15px 15px;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  color: inherit;
+  border: 1px solid aliceblue;
+  border-radius: 15px 0px 15px 0px;
+}
+
+.contact-form_button-submit {
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+
+  border: 1px solid aliceblue;
+  border-radius: 0px 15px 0px 15px;
+  background-color: inherit;
+  color: inherit;
+
+  padding: 15px 15px;
+  margin-left: 30px;
+}
+
+.contact-form_button-submit:hover {
+  border: 1px solid gold;
+  color: gold;
+}
+
+/* FILTER */
+.filter-header {
+  color: inherit;
+
+  font-size: 30px;
+  font-weight: 500;
+  font-family: inherit;
+
+  margin: 0;
+  margin-left: 30px;
+  padding: 50px 0px;
+}
+
+.filter-input {
+  padding: 10px 10px;
+  margin-left: 30px;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  color: inherit;
+  border: 1px solid aliceblue;
+  border-radius: 10px 0px 10px 0px;
+}
+
+/* CONTACTS LIST  */
+.contact-list-block {
+  margin: 0;
+  padding: 30px 60px;
+}
+
+.contact-unit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+
+  padding: 30px 00px;
+}
+
+.contact-list-text {
+  color: inherit;
+
+  font-size: 20px;
+  font-weight: 500;
+  font-family: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+.delete-contact-button {
+  cursor: pointer;
+
+  border: 1px solid aliceblue;
+  border-radius: 10px 0px 10px 0px;
+  background-color: inherit;
+  color: inherit;
+
+  padding: 10px 15px;
+}
+
+.delete-contact-button:hover,
+.delete-contact-button:focus {
+  border: 1px solid gold;
+  color: gold;
+}

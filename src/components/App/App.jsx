@@ -27,7 +27,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <section>
+    <>
       {isRefreshing ? (
         <p>...Loading. Please, wait.</p>
       ) : (
@@ -57,7 +57,7 @@ function App() {
           </Route>
         </Routes>
       )}
-    </section>
+    </>
   );
 }
 

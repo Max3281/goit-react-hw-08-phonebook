@@ -1,10 +1,10 @@
 const ErrorPage = () => {
   return (
     <section>
-      <p className="error-page-text">
+      <h1 className="error-page-text">
         Unfortunately there is no such page. Please proceed to the Home page if
         you want to continue
-      </p>
+      </h1>
     </section>
   );
 };

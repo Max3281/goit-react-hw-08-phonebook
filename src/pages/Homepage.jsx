@@ -6,7 +6,7 @@ const HomePage = () => {
 
   return (
     <section className="home-page-container">
-      <p className="home-page-text">Welcome to the Home page. </p>
+      <h1 className="home-page-text">Welcome to the Home page. </h1>
       {isLoggedIn ? (
         <p className="home-page-text">
           Now, you have a full access to your contacts page.
